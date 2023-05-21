@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Input Example</title>
+  <head>
+    <h1>Enter the colours below as per the diagram</h1>
+  </head>
+  <script>
+    function storeUserInput() {
+      var userInput = document.getElementById('userInput').value;
+      console.log('User input:', userInput);
+      // You can do further processing or store the value in another variable
+      // or send it to a server using AJAX, depending on your requirements.
+    }
+  </script>
+</head>
+<head>
+    <style>
+    #myImage {
+      position: absolute;
+      top: 100px;
+      left: 400px;
+    }
+  </style>
+  <style>
+    .predefined-box {
+      width: 400px;
+      height: 200px;
+      border: 1px solid black;
+      padding: 10px;
+      position: absolute;
+      top: 500px;
+      left: 400px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="predefined-box">
+    For the Front (F), Back (B), Right (R), and Left (L) 1,2,3,4 are as expected. <br>
+    For the Top (U), 1 is considered the far left square <br>
+    For the Bottom (D), 1 is considered the close left square <br>
+  </div>
+
+<body>
+  <img id="myImage" src="./image.jpeg">
+ 
+</body>
+  <h3>Front Side</h3>
+  <label for="userInput">Top Left (1) :</label>
+  <input type="text" id="userInput">
+  <br>
+  <label for="userInput">Top Right (2) :</label>
+  <input type="text" id="userInput">
+  <br>
+  <label for="userInput">Bottom Left (3) :</label>
+  <input type="text" id="userInput">
+  <br>
+  <label for="userInput">Bottom Right (4) :</label>
+  <input type="text" id="userInput">
+  <br>
+  <button onclick="storeUserInput()">Store</button>
+</body>
+</html>
