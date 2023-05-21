@@ -5,7 +5,7 @@ End goal: be able to input the colours on each side of the cube, and then have t
 
 
 # Task List
-- [ ] Create a simple frontend where the user can input a single value and submit it
+- [x] Create a simple frontend where the user can input a single value and submit it
 - [ ] Create a decent looking frontend where the user can input the colors on each side of the cube and submit it
 - [ ] Be able to take in the user's input and store it in a database
 - [ ] Create an algorithm to take in these inputs and solve the rubiks cube (verify that this works with actual cube)
