@@ -64,11 +64,41 @@ function submitForm() {
     var selectedValue24 = bottom4.value;
 
 
+    //create array of colours
+    var dataArray = [selectedValue1, selectedValue2, selectedValue3, selectedValue4, selectedValue5,
+        selectedValue6, selectedValue7, selectedValue8, selectedValue9, selectedValue10, selectedValue11,
+        selectedValue12, selectedValue13, selectedValue14, selectedValue15, selectedValue16, selectedValue17, 
+        selectedValue18, selectedValue19, selectedValue20, selectedValue21, selectedValue22, selectedValue23, selectedValue24]
+  
     
+    // var jsonData = JSON.stringify(dataArray);
     // Perform further processing with the selected values
-    console.log(selectedValue1, selectedValue2, selectedValue3, selectedValue4, selectedValue5,
-    selectedValue6, selectedValue7, selectedValue8, selectedValue9, selectedValue10, selectedValue11,
-    selectedValue12, selectedValue13, selectedValue14, selectedValue15, selectedValue16, selectedValue17, 
-    selectedValue18, selectedValue19, selectedValue20, selectedValue21, selectedValue22, selectedValue23, selectedValue24);
-    // Alternatively, you can send the values to a server using AJAX or other methods
-    }
+//package array
+    //var jsonData = JSON.stringify(myArray);
+//still output to console
+    console.log(dataArray);
+
+
+    //Sending data to the C# file in JSON form
+   //send json to java?
+  //  fetch('/process', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: jsonData
+  // })
+  // .then(response => response.json())
+  // .then(result => {
+  //   // Handle the response from the backend
+  //   console.log(result);
+  // })
+  // .catch(error => {
+  //   console.error('Error:', error);
+  // });
+  
+
+
+   
+  }
+    
