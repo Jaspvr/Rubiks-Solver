@@ -31,7 +31,6 @@ function submitForm() {
     var bottom4 = document.getElementById("bottom4");
 
     
-    //var left = document.getElementById("left");
     
     var selectedValue1 = front1.value;
     var selectedValue2 = front2.value;
@@ -70,35 +69,30 @@ function submitForm() {
         selectedValue12, selectedValue13, selectedValue14, selectedValue15, selectedValue16, selectedValue17, 
         selectedValue18, selectedValue19, selectedValue20, selectedValue21, selectedValue22, selectedValue23, selectedValue24]
   
-    
-    // var jsonData = JSON.stringify(dataArray);
-    // Perform further processing with the selected values
-//package array
-    //var jsonData = JSON.stringify(myArray);
-//still output to console
-    console.log(dataArray);
+    var numberArray = new Array(24);
 
 
-    //Sending data to the C# file in JSON form
-   //send json to java?
-  //  fetch('/process', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: jsonData
-  // })
-  // .then(response => response.json())
-  // .then(result => {
-  //   // Handle the response from the backend
-  //   console.log(result);
-  // })
-  // .catch(error => {
-  //   console.error('Error:', error);
-  // });
+
+    for(var i = 0; i<dataArray.length; i++){
+        if(dataArray[i] === "white"){
+            numberArray[i] = 0;
+        }else if(dataArray[i] === "red"){
+            numberArray[i] = 1;
+        }else if(dataArray[i] === "orange"){
+            numberArray[i] = 2;
+        }else if(dataArray[i] === "yellow"){
+            numberArray[i] = 3;
+        }else if(dataArray[i] === "green"){
+            numberArray[i] = 4;
+        }else if(dataArray[i] === "blue"){
+            numberArray[i] = 5;
+        }
+
+    }
+
+    //this is now ready to send over the backend
+    console.log(numberArray);
   
 
-
-   
-  }
+}
     
