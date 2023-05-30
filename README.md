@@ -9,6 +9,7 @@ End goal: be able to input the colours on each side of the cube, and then have t
 - [x] User can input all the values and submit it somewhere (console to start)
 - [ ] Create a decent looking frontend where the user can input the colors on each side of the cube and submit it
 - [ ] Be able to take in the user's input and store it in a database
+- [ ] Create an endpoint for the java
 - [x] Create an algorithm to take in these inputs and solve the rubiks cube (verify that this works with actual cube)
 - [x] Have the algorithm output each move on the rubiks cube when the program is run
 - [ ] Have the final algorithm output the solution onto the window
