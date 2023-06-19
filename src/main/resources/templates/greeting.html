@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Rubik's Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<head>
+    <style>
+    #myImage {
+      position: absolute;
+      top: 100px;
+      right: 80px;
+    }
+  </style>
+  <style>
+    .predefined-box {
+      width: 400px;
+      height: 220px;
+      /*border: 1px solid black;*/
+      padding: 10px;
+      position: absolute;
+      top: 450px;
+      right: 100px;
+      /* space around heading: */
+      padding: 10px; 
+      /* round edges of heading box*/
+      border-radius: 10px;
+      background-color: #f0f0f0;
+    }
+
+    .predefined-box h3{
+      font-size: 20px;
+      text-align: center;
+    }
+    .predefined-box p{
+      background-color: #f0f0f0;
+    }
+
+    body {
+      margin-left: 90px;
+      background-color: #d0f5c3;
+    }
+    
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold; 
+      /* space around heading: */
+      padding: 10px; 
+      /* round edges of heading box*/
+      border-radius: 10px;
+      background-color: #f0f0f0;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="predefined-box">
+    <h3>Intructions for entering your colours</h3>
+    <p>- Consider the top left box to be the top left colour on side, top right to be the top right colour, etc<br><br>
+    - Front (F), Back (B), Right (R), and Left (L): Enter as expected - consider the input boxes to coorespond to the location of the colours when the side is facing you  <br>
+    - Top (U): top left is considered the far left square <br>
+    - Bottom (D), top left is considered the close left square <br>
+    </p>
+  </div>
+
+
+  <img id="myImage" src="/image.jpeg">
+ 
+</body>
+
+<body>
+	<h1>Enter the colours below as per the diagram and instructions</h1>
+    <!-- THIS FORM WORKED, keep for backup: -->
+    <!-- <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+        <p>Configuration: <input type="text" th:field="*{content}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form> -->
+
+<!-- this form worked for concatenating two text inputs -->
+     <!-- <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+        <p>First String: <input type="text" name="firstString" th:field="*{content}" /></p>
+        <p>Second String: <input type="text" name="secondString" th:field="*{additionalContent}"/></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>  -->
+
+    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+      <h3>Front Side</h3>
+          <select name="String1" th:field="*{f1}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y">yellow</option>
+              <option value="g">green</option>
+              <option value="b">blue</option>
+              <option value="w">white</option>
+          </select>
+
+          <select name="String2" th:field="*{f2}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y">yellow</option>
+              <option value="g">green</option>
+              <option value="b">blue</option>
+              <option value="w">white</option>
+          </select>
+          <br>
+          <select name="String3" th:field="*{f3}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y">yellow</option>
+            <option value="g">green</option>
+            <option value="b">blue</option>
+            <option value="w">white</option>
+          </select>
+  
+          <select name="String4" th:field="*{f4}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y">yellow</option>
+            <option value="g">green</option>
+            <option value="b">blue</option>
+            <option value="w">white</option>
+          </select>
+
+
+      <h3>Right Side</h3>
+          <select name="String5" th:field="*{r1}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y">yellow</option>
+              <option value="g" selected>green</option>
+              <option value="b">blue</option>
+              <option value="w">white</option>
+          </select>
+
+          <select name="String6" th:field="*{r2}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y">yellow</option>
+              <option value="g" selected>green</option>
+              <option value="b">blue</option>
+              <option value="w">white</option>
+          </select>
+          <br>
+          <select name="String7" th:field="*{r3}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y">yellow</option>
+            <option value="g" selected>green</option>
+            <option value="b">blue</option>
+            <option value="w">white</option>
+          </select>
+  
+          <select name="String8" th:field="*{r4}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y">yellow</option>
+            <option value="g" selected>green</option>
+            <option value="b">blue</option>
+            <option value="w">white</option>
+          </select>
+
+       <h3>Back Side</h3>
+          <select name="String9" th:field="*{b1}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y">yellow</option>
+              <option value="g">green</option>
+              <option value="b" selected>blue</option>
+              <option value="w">white</option>
+          </select>
+
+          <select name="String10" th:field="*{b2}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y">yellow</option>
+              <option value="g">green</option>
+              <option value="b" selected>blue</option>
+              <option value="w">white</option>
+          </select>
+          <br>
+          <select name="String11" th:field="*{b3}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y">yellow</option>
+            <option value="g">green</option>
+            <option value="b" selected>blue</option>
+            <option value="w">white</option>
+          </select>
+  
+          <select name="String12" th:field="*{b4}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y">yellow</option>
+            <option value="g">green</option>
+            <option value="b" selected>blue</option>
+            <option value="w">white</option>
+          </select>
+
+
+      <h3>Left Side</h3>
+          <select name="String13" th:field="*{l1}">
+              <option value="r">red</option>
+              <option value="o" selected>orange</option>
+              <option value="y">yellow</option>
+              <option value="g">green</option>
+              <option value="b">blue</option>
+              <option value="w">white</option>
+          </select>
+
+          <select name="String14" th:field="*{l2}">
+              <option value="r">red</option>
+              <option value="o" selected>orange</option>
+              <option value="y">yellow</option>
+              <option value="g">green</option>
+              <option value="b">blue</option>
+              <option value="w">white</option>
+          </select>
+          <br>
+          <select name="String15" th:field="*{l3}">
+            <option value="r">red</option>
+            <option value="o" selected>orange</option>
+            <option value="y">yellow</option>
+            <option value="g">green</option>
+            <option value="b">blue</option>
+            <option value="w">white</option>
+          </select>
+  
+          <select name="String16" th:field="*{l4}">
+            <option value="r">red</option>
+            <option value="o" selected>orange</option>
+            <option value="y">yellow</option>
+            <option value="g">green</option>
+            <option value="b">blue</option>
+            <option value="w">white</option>
+          </select>
+
+
+      <h3>Top Side</h3>
+          <select name="String17" th:field="*{t1}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y" selected>yellow</option>
+              <option value="g">green</option>
+              <option value="b">blue</option>
+              <option value="w">white</option>
+          </select>
+
+          <select name="String18" th:field="*{t2}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y" selected>yellow</option>
+              <option value="g">green</option>
+              <option value="b">blue</option>
+              <option value="w">white</option>
+          </select>
+          <br>
+          <select name="String19" th:field="*{t3}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y" selected>yellow</option>
+            <option value="g">green</option>
+            <option value="b">blue</option>
+            <option value="w">white</option>
+          </select>
+  
+          <select name="String20" th:field="*{t4}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y" selected>yellow</option>
+            <option value="g">green</option>
+            <option value="b">blue</option>
+            <option value="w">white</option>
+          </select>
+
+      <h3>Bottom Side</h3>
+          <select name="String21" th:field="*{bo1}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y">yellow</option>
+              <option value="g">green</option>
+              <option value="b">blue</option>
+              <option value="w" selected>white</option>
+          </select>
+
+          <select name="String22" th:field="*{bo2}">
+              <option value="r">red</option>
+              <option value="o">orange</option>
+              <option value="y">yellow</option>
+              <option value="g">green</option>
+              <option value="b">blue</option>
+              <option value="w" selected>white</option>
+          </select>
+          <br>
+          <select name="String23" th:field="*{bo3}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y">yellow</option>
+            <option value="g">green</option>
+            <option value="b">blue</option>
+            <option value="w" selected>white</option>
+          </select>
+  
+          <select name="String24" th:field="*{bo4}">
+            <option value="r">red</option>
+            <option value="o">orange</option>
+            <option value="y">yellow</option>
+            <option value="g">green</option>
+            <option value="b">blue</option>
+            <option value="w" selected>white</option>
+          </select> 
+
+  
+      <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+  </form>
+
+    
+
+    
+</body>
+</html>

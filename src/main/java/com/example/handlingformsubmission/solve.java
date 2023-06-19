@@ -1,3 +1,16 @@
+package com.example.handlingformsubmission;
+
+//configurations:
+//oowwgwrbryyygygbobbwogrr
+//rrrrwwwwyyyyooooggggbbbb
+//wgwrrobwyyboroyoggbwgybr
+
+// public class solve {
+//     public String test123() {
+//         return "R";
+//     }
+// }
+
 //imports all classes and interfaces from the java.util package.
 //instead of just java.util.ArrayList; etc, java.util.* imports all util classes at once
 // things in util: linkedlist, ArrayList, HashSet, HashMap, PriorityQueue, Iterator, Comparable, TreeMap
@@ -90,7 +103,7 @@ public class solve {
    // Starts the BFS from the configuration and continues until a solved state is found
    // If a solved state is finally found, then calls trace steps method above to retrieve the list of moves
    // With the returned steps of the tracesteps method, it can return this. If no solution then returns null
-   static List<String> solve(configuration configuration) {
+   static List<String> solver(configuration configuration) {
        //creaate hashmap, what are the two parameters again?
        Map<configuration, configuration> prev = new HashMap<>();
 
@@ -117,7 +130,7 @@ public class solve {
                return traceSteps(curr, prev);
            }
 
-           //creates list of all the configurations one move away
+           //create list of all the configurations one move away
            List<configuration> oneAwayList = curr.oneAway();
                 for (int i = 0; i < oneAwayList.size(); i++) {
                     configuration oneAway = oneAwayList.get(i);
@@ -132,20 +145,7 @@ public class solve {
    }
 
    //this main method will first give terminal output to the user
-   public static void main(String[] args) {
-       //scanner object called "in" reads input through the command line or console
-       //scanner is part of the java.util package which is imported at the top of the file
-       Scanner in = new Scanner(System.in);
-
-
-       //print out instructions to the user
-       //System.out.println("Enter 24 character string of sticker colors according to cube_diagram.png\n");
-       System.out.println("y-yellow");
-       System.out.println("r-red");
-       System.out.println("g-green");
-        System.out.println("b-blue");
-        System.out.println("w-white");
-        System.out.println("o-orange");
+   public String notmain(String scramble) {
 /*
  * 
  * HERE WE WILL PARSE THE JSON FILE CONTAINING THE ARRAY OF COLOURS
@@ -153,29 +153,43 @@ public class solve {
  * 
  * 
  */
-
-       //this will read the user input as a single word then convert it to an array of numbers that represent colours
-       //we can void this from our program since we can get the client side to send over an array of numbers using javascript
-       String scramble = in.next();
-       byte[] cube = convertScrambleToStickerArray(scramble);
+        byte[] cube = convertScrambleToStickerArray(scramble);
 
 
-       //starts timer
-       long tic = System.currentTimeMillis();
+        //starts timer
+        long tic = System.currentTimeMillis();
 
 
-       //initial cube state to feed into the solving algorithm
-       configuration init = new configuration(cube, 0);
+        //initial cube state to feed into the solving algorithm
+        configuration init = new configuration(cube, 0);
 
 
-       //call solving algorithm on the configuration and set the output to a list of strings
-       List<String> solution = solve(init);
+        //call solving algorithm on the configuration and set the output to a list of strings
+        List<String> solution = solver(init);
 
+        //make into one presentable string:
+        StringBuilder stringBuilder = new StringBuilder();
+        if(solution.size() <= 0){
+            return "Cube is already solved!";
+        }
 
-       //print out the solution and time taken to solve it
-       System.out.println("Shortest solution:\n" + solution);
-       System.out.printf("Time taken to solve: %fs\n", (System.currentTimeMillis() - tic) / 1000f);
+        for (int i = 0; i < solution.size(); i++) {
+            String listItem = (i + 1) + ". " + solution.get(i);
+            stringBuilder.append(listItem);
+            
+            if (i < solution.size() - 1) {
+                stringBuilder.append("   "); // Add spacing between list items
+            }
+        }
 
+        String newString = stringBuilder.toString();
+
+        //solution and time taken to solve it
+        //System.out.println("" + solution);
+       // System.out.printf("Solution found in %f seconds", (System.currentTimeMillis() - tic) / 1000f);
+
+        //"" so that we return a string
+        return newString;
 
    }
 }
