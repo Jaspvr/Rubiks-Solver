@@ -1,7 +1,11 @@
 # Rubiks-Solver
+SpringBoot web application to find the shortest possible solution to a 2x2 Rubiks Cube.
+
+
+
+
+
 End goal: be able to input the colours on each side of the cube, and then have the solution to solving it outputted to the user
-
-
 
 # Task List
 - [x] Create a simple frontend where the user can input a single value and submit it
