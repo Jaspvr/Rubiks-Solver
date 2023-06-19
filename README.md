@@ -13,5 +13,6 @@ End goal: be able to input the colours on each side of the cube, and then have t
 - [x] Have the algorithm output each move on the rubiks cube when the program is run
 - [x] Have the final algorithm output the solution onto the window
 - [x] Implement a reset button so that the user can begin the process again with a different colour scheme
-- [ ] Implement an error message to be thrown if the colour scheme is invalid
+- [x] Implement an error message to be thrown if the colour scheme is invalid
+- [x] Done!
 
