@@ -1,6 +1,12 @@
 # Rubiks-Solver
-SpringBoot web application to find the shortest possible solution to a 2x2 Rubiks Cube.
+Web application to find the shortest possible solution to a 2x2 Rubiks Cube. 
 
+#Languages and Tools
+SpringBoot: Used to create backend endpoint, connect front and back ends through GET and POST methods, and to launch the web application.
+Java: Used for the solving algorithm, and to handle form submission from HTML
+HTML: Used to create the front end form and the result page
+CSS: Used to style the front end pages
+JavaScript: did not directly used in the end result, but previously used to convert Form data into an array of numbers
 
 
 
