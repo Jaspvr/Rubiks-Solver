@@ -1,6 +1,5 @@
 # Rubiks-Solver
 End goal: be able to input the colours on each side of the cube, and then have the solution to solving it outputted to the user
-- If the color scheme is invalid, an error message should be thrown
 
 
 
