@@ -1,6 +1,8 @@
 # Rubiks-Solver
 Web application to find the shortest possible solution to a 2x2 Rubiks Cube. 
 
+#Video Demo: https://youtu.be/PX5OEW4qqNU
+
 # Languages and Tools
 - SpringBoot: Used to create backend endpoint, connect front and back ends through GET and POST methods, and to launch the web application.
 - Java: Used for the solving algorithm, and to handle form submission from HTML
